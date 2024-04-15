@@ -2,6 +2,8 @@ package chap2;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.sopt.chap2.PasswordStrength;
+import org.sopt.chap2.PasswordStrengthMeter;
 
 /**
  * <strong><검사할 규칙></strong>
@@ -23,7 +25,19 @@ public class PasswordStrengthMeterTest {
     @Test
     void meetsAllCriteria_Then_Strong() {
         PasswordStrengthMeter meter = new PasswordStrengthMeter();
+
         PasswordStrength result = meter.meter("ab12!@AB");
-        Assertions.assertEquals(PasswordStrength.STRON, result);
+        Assertions.assertEquals(PasswordStrength.STRONG, result);
+
+        PasswordStrength result2 = meter.meter("ab12!@Add");
+        Assertions.assertEquals(PasswordStrength.STRONG, result2);
+    }
+
+    @Test
+    void meetsOtherCriteria_except_for_Length_Then_Normal() {
+        PasswordStrengthMeter meter = new PasswordStrengthMeter();
+
+        PasswordStrength result = meter.meter("ab12!@A");
+        Assertions.assertEquals(PasswordStrength.NORMAL, result);
     }
 }
