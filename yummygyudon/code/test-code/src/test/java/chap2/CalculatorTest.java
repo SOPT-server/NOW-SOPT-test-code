@@ -1,5 +1,8 @@
+package chap2;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.sopt.chap2.Calculator;
 
 public class CalculatorTest {
 
