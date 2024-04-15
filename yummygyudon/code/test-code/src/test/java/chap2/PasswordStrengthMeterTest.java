@@ -21,11 +21,9 @@ import org.sopt.chap2.PasswordStrengthMeter;
  * <li>1개 이하 충족 : "약함"</li>
  */
 public class PasswordStrengthMeterTest {
-
+    PasswordStrengthMeter meter = new PasswordStrengthMeter();
     @Test
     void meetsAllCriteria_Then_Strong() {
-        PasswordStrengthMeter meter = new PasswordStrengthMeter();
-
         PasswordStrength result = meter.meter("ab12!@AB");
         Assertions.assertEquals(PasswordStrength.STRONG, result);
 
@@ -35,8 +33,6 @@ public class PasswordStrengthMeterTest {
 
     @Test
     void meetsOtherCriteria_except_for_Length_Then_Normal() {
-        PasswordStrengthMeter meter = new PasswordStrengthMeter();
-
         PasswordStrength result = meter.meter("ab12!@A");
         Assertions.assertEquals(PasswordStrength.NORMAL, result);
 
@@ -46,8 +42,6 @@ public class PasswordStrengthMeterTest {
 
     @Test
     void meetsOtherCriteria_except_for_Number_Then_Normal() {
-        PasswordStrengthMeter meter = new PasswordStrengthMeter();
-
         PasswordStrength result = meter.meter("ab!!@ABqwer");
         Assertions.assertEquals(PasswordStrength.NORMAL, result);
     }
