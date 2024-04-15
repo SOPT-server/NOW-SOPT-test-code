@@ -21,28 +21,26 @@ import org.sopt.chap2.PasswordStrengthMeter;
  * <li>1개 이하 충족 : "약함"</li>
  */
 public class PasswordStrengthMeterTest {
-    PasswordStrengthMeter meter = new PasswordStrengthMeter();
+    private final PasswordStrengthMeter meter = new PasswordStrengthMeter();
+
+    private void assertStrength(String password, PasswordStrength expStr) {
+        PasswordStrength result = meter.meter(password);
+        Assertions.assertEquals(expStr, result);
+    }
     @Test
     void meetsAllCriteria_Then_Strong() {
-        PasswordStrength result = meter.meter("ab12!@AB");
-        Assertions.assertEquals(PasswordStrength.STRONG, result);
-
-        PasswordStrength result2 = meter.meter("ab12!@Add");
-        Assertions.assertEquals(PasswordStrength.STRONG, result2);
+        assertStrength("ab12!@AB", PasswordStrength.STRONG);
+        assertStrength("ab12!@Add", PasswordStrength.STRONG);
     }
 
     @Test
     void meetsOtherCriteria_except_for_Length_Then_Normal() {
-        PasswordStrength result = meter.meter("ab12!@A");
-        Assertions.assertEquals(PasswordStrength.NORMAL, result);
-
-        PasswordStrength result2 = meter.meter("Ab12!c");
-        Assertions.assertEquals(PasswordStrength.NORMAL, result2);
+        assertStrength("ab12!@A", PasswordStrength.NORMAL);
+        assertStrength("Ab12!c", PasswordStrength.NORMAL);
     }
 
     @Test
     void meetsOtherCriteria_except_for_Number_Then_Normal() {
-        PasswordStrength result = meter.meter("ab!!@ABqwer");
-        Assertions.assertEquals(PasswordStrength.NORMAL, result);
+        assertStrength("ab!!@ABqwer", PasswordStrength.NORMAL);
     }
 }
