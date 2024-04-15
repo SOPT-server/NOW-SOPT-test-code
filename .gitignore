@@ -1,5 +1,5 @@
 HELP.md
-code/test-code/.gradle
+yummygyudon/code/test-code/.gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
@@ -36,8 +36,5 @@ out/
 
 ### VS Code ###
 .vscode/
-
-### config yml ###
-application-**.yml
 
 */src/main/generated
