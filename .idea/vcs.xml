@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/yummygyudon/code/java-baseball" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/yummygyudon/code/java-christmas" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/yummygyudon/code/java-lotto" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/yummygyudon/code/java-menu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/yummygyudon/code/java-racingcar" vcs="Git" />
+  </component>
+</project>
