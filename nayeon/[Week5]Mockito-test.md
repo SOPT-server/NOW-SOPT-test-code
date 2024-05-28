@@ -4,5 +4,4 @@
 https://github.com/NOW-SOPT-SERVER/NayeonKoh/pull/13
 
 ### Todo
-- [ ] Injection을 사용한 테스트코드로 리팩토링
-- [ ] Item 관련 API 테스트 코드 작성
+- [ ] Item 관련 API 테스트 코드 작성(get all, register)
